@@ -67,10 +67,25 @@ var handlers = {
 
         // Create speech output
         var speechOutput = this.t("GET_FACT_MESSAGE") + randomFact;
-        this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomFact)
+        this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomFact);
     },
     'GetNewYearFactIntent': function () {
         //TODO your code here
+        var factArr = this.t('FACTS');
+        var year = this.event.request.intent.slots["FACT_YEAR"].value;
+        
+        var factShow = null;
+        for (var i = 0; i < factArr.length; i++) {
+          if (factArr[i].includes(year)) {
+            factShow =  factArr[i];
+          }
+        }
+        if (factShow == null)
+          factShow = randomPhrase(factArr);
+
+        // Create speech output
+        var speechOutput = this.t("GET_FACT_MESSAGE") + factShow;
+        this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), factShow);
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = this.t("HELP_MESSAGE");
