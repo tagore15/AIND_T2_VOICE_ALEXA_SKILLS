@@ -1,0 +1,16 @@
+GetNewFactIntent a fact
+GetNewFactIntent tell me a fact
+GetNewFactIntent give me a fact
+GetNewFactIntent tell me ai fact 
+GetNewFactIntent give me ai fact
+GetNewFactIntent tell me something
+GetNewFactIntent give me something
+GetNewFactIntent tell me trivia
+GetNewFactIntent give me trivia
+GetNewFactIntent tell me ai trivia
+GetNewFactIntent give me ai trivia
+GetNewFactIntent give me some information
+GetNewFactIntent tell me some information
+GetNewFactIntent give me some ai information
+GetNewFactIntent tell me some ai information
+GetNewFactIntent ai fact
