@@ -23,6 +23,8 @@ var languageStrings = {
             "FACTS": facts.FACTS_EN,
             "SKILL_NAME": "My History Facts",  // OPTIONAL change this to a more descriptive name
             "GET_FACT_MESSAGE": GET_FACT_MSG_EN,
+            "REPROMPT_FACT": "You can also ask for a fact by saying: give me a fact",
+            "REPROMPT_FACT_YEAR": "You can also ask for a fact by saying: give me a fact for year two thousand and sixteen",
             "HELP_MESSAGE": "You can say tell me a fact, or, you can say exit... What can I help you with?",
             "HELP_REPROMPT": "What can I help you with?",
             "STOP_MESSAGE": "Goodbye!"
@@ -66,7 +68,7 @@ var handlers = {
     'GetFact': function () {
         // Get a random fact from the facts list
         // Use this.t() to get corresponding language data
-        var repromptSpeech = 'You can also query AI fact for a particular year.';
+        var repromptSpeech = this.t('REPROMPT_FACT_YEAR');
 
         var factArr = this.t('FACTS');
         var randomFact = randomPhrase(factArr);
@@ -81,7 +83,8 @@ var handlers = {
     },
     'GetNewYearFactIntent': function () {
         //TODO your code here
-        var repromptSpeech = 'Query me for another year or for a random fact for any year.';
+        var repromptSpeech = this.t('REPROMPT_FACT');
+        
         var factArr = this.t('FACTS');
         var year = this.event.request.intent.slots["FACT_YEAR"].value;
         
